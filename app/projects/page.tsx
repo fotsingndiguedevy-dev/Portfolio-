@@ -1,6 +1,6 @@
 import PageHeader from "@/components/ui/PageHeader";
 import RepoCard from "@/components/projects/RepoCard";
-import { fetchRepos } from "@/lib/github";
+import { fetchRepos, type GitHubRepo } from "@/lib/github";
 
 const USERNAME = process.env.GITHUB_USERNAME || "fotsingndiguedevy-dev";
 
@@ -11,8 +11,8 @@ export const metadata = {
 };
 
 export default async function ProjectsPage() {
-  let repos = [];
-  let error = null;
+let repos: GitHubRepo[] = [];
+let error: string | null = null;
 
   try {
     repos = await fetchRepos(USERNAME);
