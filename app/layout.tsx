@@ -39,6 +39,9 @@ export const metadata: Metadata = {
     "AWS",
     "Fotsing Ndigue Devy",
   ],
+  verification: {
+    google: "qZJ7UZo0VNihswEwRPjioML7-dbsFZOHBq7ylHpRAek",
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
