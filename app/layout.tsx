@@ -1,3 +1,4 @@
+import CursorGlow from "@/components/ui/CursorGlow";
 import type { Metadata } from "next";
 import { JetBrains_Mono, Inter } from "next/font/google";
 import "./globals.css";
@@ -30,7 +31,8 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${jetbrainsMono.variable} ${inter.variable}`}>
       <body className="bg-bg text-text font-mono antialiased min-h-screen flex flex-col">
-        <Header />
+       <CursorGlow /> 
+       <Header />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>

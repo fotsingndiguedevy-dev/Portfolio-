@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
 
@@ -18,11 +18,37 @@ const navLinks = [
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+
+  // Ferme le menu quand on clique ailleurs
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        headerRef.current &&
+        !headerRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false);
+      }
+    }
+
+    if (open) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () =>
+        document.removeEventListener("mousedown", handleClickOutside);
+    }
+  }, [open]);
+
+  // Ferme le menu automatiquement à chaque changement de page
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-lg bg-bg/80 border-b border-border">
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-50 backdrop-blur-lg bg-bg/80 border-b border-border"
+    >
       <nav className="container-custom flex items-center justify-between h-16">
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <span className="text-accent-green font-mono text-lg font-bold">
             &gt;_
@@ -32,7 +58,6 @@ export default function Header() {
           </span>
         </Link>
 
-        {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -50,7 +75,6 @@ export default function Header() {
           ))}
         </ul>
 
-        {/* Socials + burger */}
         <div className="flex items-center gap-3">
           <a
             href="https://github.com/fotsingndiguedevy-dev"
@@ -62,7 +86,7 @@ export default function Header() {
             <GithubIcon size={18} />
           </a>
           <a
-            href="https://cm.linkedin.com/in/devy-fotsing-a3859b330"
+            href="https://linkedin.com/in/TON_PROFIL"
             target="_blank"
             rel="noopener noreferrer"
             className="text-text-muted hover:text-accent-green transition-colors"
@@ -81,7 +105,6 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden border-t border-border bg-bg-soft">
           <ul className="container-custom py-4 flex flex-col gap-2">
@@ -89,7 +112,6 @@ export default function Header() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  onClick={() => setOpen(false)}
                   className={`block px-3 py-2 text-sm font-mono rounded-md transition-colors ${
                     pathname === link.href
                       ? "text-accent-green bg-accent-green/5"
