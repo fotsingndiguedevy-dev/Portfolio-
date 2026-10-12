@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X, Github, Linkedin } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
 
 const navLinks = [
   { href: "/", label: "Accueil" },
@@ -58,7 +59,7 @@ export default function Header() {
             className="text-text-muted hover:text-accent-green transition-colors"
             aria-label="GitHub"
           >
-            <Github size={18} />
+            <GithubIcon size={18} />
           </a>
           <a
             href="https://cm.linkedin.com/in/devy-fotsing-a3859b330"
@@ -67,7 +68,7 @@ export default function Header() {
             className="text-text-muted hover:text-accent-green transition-colors"
             aria-label="LinkedIn"
           >
-            <Linkedin size={18} />
+            <LinkedinIcon size={18} />
           </a>
 
           <button

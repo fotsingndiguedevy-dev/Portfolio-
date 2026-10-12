@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -8,8 +9,8 @@ export default function Footer() {
       <div className="container-custom py-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-sm text-text-muted font-mono">
           © {year}{" "}
-          <span className="text-accent-green">Fotsing Ndigue Devy</span> — Built
-          with Next.js
+          <span className="text-accent-green">Fotsing Ndigue Devy</span> —
+          Built with Next.js
         </p>
 
         <div className="flex items-center gap-4">
@@ -20,7 +21,7 @@ export default function Footer() {
             className="text-text-muted hover:text-accent-green transition-colors"
             aria-label="GitHub"
           >
-            <Github size={18} />
+            <GithubIcon size={18} />
           </a>
           <a
             href="https://cm.linkedin.com/in/devy-fotsing-a3859b330"
@@ -29,7 +30,7 @@ export default function Footer() {
             className="text-text-muted hover:text-accent-green transition-colors"
             aria-label="LinkedIn"
           >
-            <Linkedin size={18} />
+            <LinkedinIcon size={18} />
           </a>
           <a
             href="mailto:fotsingmisteriodevy@gmail.com"
