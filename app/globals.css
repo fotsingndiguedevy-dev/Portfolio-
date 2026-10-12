@@ -1,26 +1,80 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  * {
+    @apply border-border;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  html {
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: theme("colors.bg.DEFAULT");
+    color: theme("colors.text.DEFAULT");
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Scrollbar custom style terminal */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: theme("colors.bg.soft");
+  }
+  ::-webkit-scrollbar-thumb {
+    background: theme("colors.accent.green");
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: theme("colors.accent.cyan");
+  }
+
+  /* Sélection de texte */
+  ::selection {
+    background-color: theme("colors.accent.green");
+    color: theme("colors.bg.DEFAULT");
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Fond avec effet grille style terminal */
+  .terminal-grid {
+    background-image:
+      linear-gradient(rgba(0, 255, 156, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 156, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Conteneur centré */
+  .container-custom {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl;
+  }
+
+  /* Curseur clignotant du terminal */
+  .cursor-blink::after {
+    content: "▊";
+    @apply ml-1 text-accent-green animate-blink;
+  }
+}
+
+@layer utilities {
+  /* Texte en dégradé */
+  .text-gradient {
+    background: linear-gradient(135deg, #00ff9c 0%, #22d3ee 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Bordure dégradée */
+  .border-gradient {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(#0a0e14, #0a0e14) padding-box,
+      linear-gradient(135deg, #00ff9c, #22d3ee) border-box;
+  }
 }
