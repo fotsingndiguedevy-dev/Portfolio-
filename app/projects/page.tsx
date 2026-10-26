@@ -22,6 +22,11 @@ export default async function ProjectsPage() {
     error = e instanceof Error ? e.message : "Erreur inconnue";
   }
 
+  // On filtre UNIQUEMENT DevOps Quiz pour ne pas l'avoir en double
+  const otherRepos = repos.filter(
+    (repo) => repo.name.toLowerCase() !== "devops_quiz"
+  );
+
   return (
     <>
       <PageHeader
@@ -43,7 +48,6 @@ export default async function ProjectsPage() {
             <div className="absolute inset-0 bg-gradient-glow pointer-events-none opacity-50" />
             
             <div className="relative z-10 grid md:grid-cols-3 gap-8">
-              {/* Infos principales */}
               <div className="md:col-span-2 space-y-4">
                 <div className="flex items-center gap-3">
                   <h3 className="text-2xl md:text-3xl font-mono font-bold text-text">
@@ -80,7 +84,6 @@ export default async function ProjectsPage() {
                 </div>
               </div>
 
-              {/* Actions */}
               <div className="flex flex-col justify-center gap-3 border-t md:border-t-0 md:border-l border-border pt-6 md:pt-0 md:pl-8">
                 <a
                   href="https://devops-quiz-blue.vercel.app"
@@ -116,15 +119,15 @@ export default async function ProjectsPage() {
               </p>
               <p className="text-text-muted text-xs">{error}</p>
             </div>
-          ) : repos.length === 0 ? (
+          ) : otherRepos.length === 0 ? (
             <div className="bg-bg-soft border border-border rounded-lg p-12 text-center">
               <p className="text-text-muted font-mono">
-                Aucun repo public trouvé pour le moment.
+                Aucun autre projet public pour le moment.
               </p>
             </div>
           ) : (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {repos.map((repo) => (
+              {otherRepos.map((repo) => (
                 <RepoCard key={repo.id} repo={repo} />
               ))}
             </div>
