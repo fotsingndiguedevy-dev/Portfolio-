@@ -28,21 +28,43 @@ export const skillsData: SkillCategory[] = [
         note: "Commandes, scripts, automatisation",
       },
       {
-        name: "Vim / Nano",
+        name: "Vim",
         level: 65,
         note: "Édition de code en ligne de commande",
       },
     ],
   },
   {
-    title: "Outils & Versioning",
+    title: "Architecture & Orchestration",
+    command: "cat architecture.txt",
+    icon: "🧠",
+    skills: [
+      {
+        name: "Architecture logicielle",
+        level: 65,
+        note: "Structure hiérarchique (Parties > Modules)",
+      },
+      {
+        name: "Outils IA (DeepSeek, Claude)",
+        level: 85,
+        note: "Génération de code et debug assisté",
+      },
+      {
+        name: "Gestion de projet",
+        level: 75,
+        note: "Planification, exécution, documentation",
+      },
+    ],
+  },
+  {
+    title: "Outils & Déploiement",
     command: "cat tools.txt",
     icon: "🔧",
     skills: [
       {
         name: "Git & GitHub",
         level: 80,
-        note: "Branches, Pull Requests, workflow pro",
+        note: "Workflow Git Flow, PR, Branches",
       },
       {
         name: "Vercel",
@@ -54,38 +76,21 @@ export const skillsData: SkillCategory[] = [
         level: 45,
         note: "Création de workflows de test/build",
       },
-    ],
-  },
-  {
-    title: "Architecture & IA",
-    command: "cat architecture.txt",
-    icon: "🧠",
-    skills: [
       {
-        name: "Orchestration de projet",
-        level: 70,
-        note: "Conception, structure, direction",
-      },
-      {
-        name: "Outils IA (DeepSeek, Claude)",
-        level: 85,
-        note: "Génération de code et debug assisté",
-      },
-      {
-        name: "API REST",
-        level: 50,
-        note: "Intégration d'API externes (GitHub API)",
+        name: "VPS / Nginx",
+        level: 20,
+        note: "Prochaine étape (migration)",
       },
     ],
   },
 ];
 
-// Section "En cours d'exploration" 
+// Section "En cours d'exploration"
 export const learningSkills = [
   {
     name: "Docker",
     level: 5,
-    note: "Prochaine étape (Phase 2)",
+    note: "Prochaine étape",
   },
   {
     name: "Kubernetes",
@@ -98,8 +103,8 @@ export const learningSkills = [
     note: "À venir",
   },
   {
-    name: "AWS / Cloud",
+    name: "Microsoft Azure",
     level: 5,
-    note: "Notions de base",
+    note: "Focus Cloud prévu",
   },
 ];
