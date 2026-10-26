@@ -19,9 +19,6 @@ export interface Experience extends ExperienceMeta {
   content: string;
 }
 
-/**
- * Récupère toutes les expériences triées par date décroissante
- */
 export function getAllExperiences(): Experience[] {
   if (!fs.existsSync(EXPERIENCE_DIR)) {
     return [];
@@ -51,7 +48,14 @@ export function getAllExperiences(): Experience[] {
       } as Experience;
     })
     .sort((a, b) => {
-      // Tri par date de début décroissante
+      // 1. Trier par date de fin décroissante 
+      // ("present" sera toujours en premier alphabétiquement après les années)
+      const endComparison = b.end.localeCompare(a.end);
+      if (endComparison !== 0) {
+        return endComparison;
+      }
+      
+      // 2. Si les dates de fin sont identiques, trier par date de début décroissante
       return b.start.localeCompare(a.start);
     });
 
