@@ -1,9 +1,11 @@
 import PageHeader from "@/components/ui/PageHeader";
-import { skillsData } from "@/content/skills";
+import { skillsData, learningSkills } from "@/content/skills";
+import { Rocket } from "lucide-react";
 
 export const metadata = {
   title: "Compétences | Fotsing Ndigue Devy",
-  description: "Mes compétences techniques en DevOps, développement et systèmes.",
+  description:
+    "Mes compétences techniques, mes outils et mon environnement de travail.",
 };
 
 export default function SkillsPage() {
@@ -12,22 +14,21 @@ export default function SkillsPage() {
       <PageHeader
         command="ls -la skills/"
         title="Compétences"
-        subtitle="Les technologies que j'utilise et mon niveau actuel sur chacune"
+        subtitle="Mon environnement de travail et mes outils"
       />
 
       <section className="container-custom py-12 md:py-16">
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* CATÉGORIES PRINCIPALES */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
           {skillsData.map((category) => (
             <div
               key={category.title}
               className="bg-bg-soft border border-border rounded-lg p-6 hover:border-accent-green/30 transition-colors"
             >
-              <div className="flex items-center gap-2 mb-6">
-                <span className="text-accent-green font-mono text-sm">
-                  $
-                </span>
-                <span className="text-text-muted font-mono text-sm">
-                  {category.command}
+              <div className="flex items-center gap-2 mb-5">
+                <span className="text-2xl">{category.icon}</span>
+                <span className="text-text-muted font-mono text-xs">
+                  $ {category.command}
                 </span>
               </div>
 
@@ -46,12 +47,17 @@ export default function SkillsPage() {
                         {skill.level}%
                       </span>
                     </div>
-                    <div className="h-1.5 bg-bg-card rounded-full overflow-hidden">
+                    <div className="h-1.5 bg-bg-card rounded-full overflow-hidden mb-1">
                       <div
                         className="h-full bg-gradient-accent rounded-full transition-all duration-500"
                         style={{ width: `${skill.level}%` }}
                       />
                     </div>
+                    {skill.note && (
+                      <p className="text-xs text-text-dim font-mono">
+                        {skill.note}
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>
@@ -59,12 +65,53 @@ export default function SkillsPage() {
           ))}
         </div>
 
-        {/* Note bas de page */}
+        {/* SECTION APPRENTISSAGE */}
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-6">
+            <Rocket size={24} className="text-accent-green" />
+            <h2 className="text-2xl font-mono font-bold text-text">
+              En cours d&apos;exploration
+            </h2>
+          </div>
+          <p className="text-text-muted mb-6 max-w-2xl">
+            Les technologies que je vais aborder dans les prochains mois pour
+            compléter ma transition vers le DevOps.
+          </p>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {learningSkills.map((skill) => (
+              <div
+                key={skill.name}
+                className="bg-bg-soft border border-accent-green/20 rounded-lg p-4 hover:border-accent-green/50 transition-colors"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm text-text font-mono font-semibold">
+                    {skill.name}
+                  </span>
+                  <span className="text-xs text-accent-green font-mono">
+                    {skill.level}%
+                  </span>
+                </div>
+                <div className="h-1 bg-bg-card rounded-full overflow-hidden mb-2">
+                  <div
+                    className="h-full bg-gradient-accent rounded-full transition-all duration-500"
+                    style={{ width: `${skill.level}%` }}
+                  />
+                </div>
+                <p className="text-xs text-text-dim font-mono">
+                  {skill.note}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* NOTE DE BAS DE PAGE */}
         <div className="mt-12 bg-bg-soft border border-border rounded-lg p-6 text-center">
           <p className="text-text-muted font-mono text-sm">
-            <span className="text-accent-green">#</span> Ces niveaux évoluent en
-            permanence — je mets à jour cette page au fur et à mesure de mon
-            apprentissage.
+            <span className="text-accent-green">#</span> Ces compétences sont mises à
+            jour au fur et à mesure de ma progression. L&apos;accent est mis sur
+            mon environnement (Termux) et ma capacité à orchestrer des outils modernes.
           </p>
         </div>
       </section>

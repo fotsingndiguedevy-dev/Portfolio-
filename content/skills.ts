@@ -1,56 +1,105 @@
 export interface Skill {
   name: string;
-  level: number; // 0 à 100
-  icon?: string;
+  level: number;
+  note?: string;
 }
 
 export interface SkillCategory {
   title: string;
   command: string;
+  icon: string;
   skills: Skill[];
 }
 
 export const skillsData: SkillCategory[] = [
   {
-    title: "Systèmes & Scripting",
+    title: "Systèmes & Environnement",
     command: "cat system.txt",
+    icon: "🖥️",
     skills: [
-      { name: "Linux (Debian/Ubuntu)", level: 75 },
-      { name: "Bash", level: 70 },
-      { name: "Python", level: 55 },
-      { name: "Git & GitHub", level: 80 },
+      {
+        name: "Termux (Android)",
+        level: 85,
+        note: "100% de mes projets construits ici",
+      },
+      {
+        name: "Linux / Bash",
+        level: 70,
+        note: "Commandes, scripts, automatisation",
+      },
+      {
+        name: "Vim / Nano",
+        level: 65,
+        note: "Édition de code en ligne de commande",
+      },
     ],
   },
   {
-    title: "Développement Web",
-    command: "cat web.txt",
-    skills: [
-      { name: "HTML / CSS", level: 70 },
-      { name: "JavaScript", level: 60 },
-      { name: "TypeScript", level: 55 },
-      { name: "React / Next.js", level: 50 },
-      { name: "Tailwind CSS", level: 65 },
-    ],
-  },
-  {
-    title: "DevOps & Cloud",
-    command: "cat devops.txt",
-    skills: [
-      { name: "Docker", level: 35 },
-      { name: "Kubernetes", level: 20 },
-      { name: "Terraform", level: 15 },
-      { name: "CI/CD (GitHub Actions)", level: 30 },
-      { name: "AWS", level: 20 },
-    ],
-  },
-  {
-    title: "Réseaux & Outils",
+    title: "Outils & Versioning",
     command: "cat tools.txt",
+    icon: "🔧",
     skills: [
-      { name: "Réseaux (TCP/IP, DNS, HTTP)", level: 60 },
-      { name: "SSH & clés", level: 70 },
-      { name: "Termux", level: 75 },
-      { name: "Vercel", level: 55 },
+      {
+        name: "Git & GitHub",
+        level: 80,
+        note: "Branches, Pull Requests, workflow pro",
+      },
+      {
+        name: "Vercel",
+        level: 75,
+        note: "Déploiement continu (CI/CD basique)",
+      },
+      {
+        name: "GitHub Actions",
+        level: 45,
+        note: "Création de workflows de test/build",
+      },
     ],
+  },
+  {
+    title: "Architecture & IA",
+    command: "cat architecture.txt",
+    icon: "🧠",
+    skills: [
+      {
+        name: "Orchestration de projet",
+        level: 70,
+        note: "Conception, structure, direction",
+      },
+      {
+        name: "Outils IA (DeepSeek, Claude)",
+        level: 85,
+        note: "Génération de code et debug assisté",
+      },
+      {
+        name: "API REST",
+        level: 50,
+        note: "Intégration d'API externes (GitHub API)",
+      },
+    ],
+  },
+];
+
+// Section "En cours d'exploration" 
+export const learningSkills = [
+  {
+    name: "Docker",
+    level: 5,
+    note: "Prochaine étape (Phase 2)",
+  },
+  {
+    name: "Kubernetes",
+    level: 0,
+    note: "À venir",
+  },
+  {
+    name: "Terraform",
+    level: 0,
+    note: "À venir",
+  },
+  {
+    name: "AWS / Cloud",
+    level: 5,
+    note: "Notions de base",
   },
 ];
