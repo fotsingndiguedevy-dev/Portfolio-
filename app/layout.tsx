@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Fotsing Ndigue Devy",
   },
   description:
-    "Portfolio de Fotsing Ndigue Devy — Ingénieur DevOps en formation. Découvrez mes projets, compétences et mon parcours vers le cloud et Kubernetes.",
+     "Portfolio de Fotsing Ndigue Devy — Ingénieur DevOps en formation continue. Découvrez mes projets, compétences et mon parcours vers le monde DevOps.",
   authors: [{ name: "Fotsing Ndigue Devy" }],
   creator: "Fotsing Ndigue Devy",
   keywords: [

@@ -6,12 +6,10 @@ import GradientText from "@/components/ui/GradientText";
 export default function Hero() {
   return (
     <section className="relative py-20 md:py-28 overflow-hidden terminal-grid">
-      {/* Halo de lumière en haut */}
       <div className="absolute inset-0 bg-gradient-glow pointer-events-none" />
 
       <div className="container-custom relative">
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          {/* Colonne gauche : texte */}
           <div className="animate-fade-in">
             <p className="text-accent-green font-mono text-sm mb-4">
               $ whoami
@@ -21,13 +19,10 @@ export default function Hero() {
               <GradientText>Devy</GradientText>
             </h1>
             <p className="text-xl md:text-2xl text-text-muted font-mono mb-6">
-              Ingénieur <span className="text-accent-green">DevOps</span> en
-              formation
+              Passionné de <span className="text-accent-green">DevOps</span> & d&apos;Architecture
             </p>
             <p className="text-text-muted leading-relaxed mb-8 max-w-lg">
-              J&apos;automatise, je conteneurise, je déploie. Passionné par le
-              cloud, Kubernetes, l&apos;Infrastructure as Code et tout ce qui
-              rend les systèmes plus fiables.
+              Je conçois et déploie des applications concrètes depuis mon smartphone Android (Termux) et également sur des VPS. J&apos;applique mes apprentissages DevOps sur des projets réels comme <span className="text-accent-green font-semibold">DevOps Quiz</span>, une plateforme de jeux de quiz.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -40,7 +35,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Colonne droite : faux terminal */}
           <div className="animate-fade-in">
             <Terminal title="devy@portfolio:~$">
               <div className="space-y-2">
@@ -51,9 +45,11 @@ export default function Hero() {
                 <pre className="text-text-muted text-xs md:text-sm overflow-x-auto">
 {`{
   "nom": "Fotsing Ndigue Devy",
-  "role": "DevOps Engineer",
-  "stack": ["Linux", "Docker", "K8s",
-            "Terraform", "AWS"],
+  "role": "Architecte & Apprenti DevOps",
+  "focus": ["Linux", "Git", "Architecture",
+            "VPS", "Azure"],
+  "projet_actuel": "DevOps Quiz (470+ Q)",
+  "environnement": "Termux (Android) + Vim",
   "localisation": "Cameroun 🇨🇲",
   "disponible": true
 }`}
