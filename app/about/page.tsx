@@ -2,7 +2,6 @@ import PageHeader from "@/components/ui/PageHeader";
 import Terminal from "@/components/ui/Terminal";
 import Badge from "@/components/ui/Badge";
 import {
-  User,
   MapPin,
   Briefcase,
   Coffee,
@@ -15,12 +14,13 @@ import {
   Rocket,
   Code2,
   Users,
+  Terminal as TerminalIcon,
 } from "lucide-react";
 
 export const metadata = {
   title: "À propos | Fotsing Ndigue Devy",
   description:
-    "28 ans, en reconversion vers le DevOps. Découvrez mon parcours, mes projets et ma vision.",
+    "28 ans, en transition vers le DevOps. Je construis des projets concrets depuis mon téléphone.",
 };
 
 export default function AboutPage() {
@@ -42,12 +42,11 @@ export default function AboutPage() {
                 <p className="text-accent-green">$ whoami --short</p>
                 <div className="space-y-2 text-text">
                   <p className="text-lg font-bold">
-                    Coiffeur devenu{" "}
-                    <span className="text-accent-green">DevOps</span>.
+                    En transition vers le <span className="text-accent-green">DevOps</span>.
                   </p>
                   <p className="text-text-muted">
-                    28 ans, Cameroun 🇨🇲. Je construis le futur que je veux —
-                    un commit à la fois.
+                    28 ans, Cameroun 🇨🇲. Je construis des projets concrets
+                    depuis mon téléphone Android.
                   </p>
                 </div>
               </div>
@@ -67,18 +66,18 @@ export default function AboutPage() {
                   tenir la pression.
                 </p>
                 <p>
-                  Un jour, une vidéo m&apos;a fait découvrir le{" "}
-                  <span className="text-accent-green">DevOps</span>. J&apos;ai
-                  compris en quelques minutes que{" "}
-                  <span className="text-text">c&apos;était fait pour moi</span>{" "}
-                  : créer, automatiser, résoudre des problèmes.
+                  Curieux de nature, j&apos;ai découvert le{" "}
+                  <span className="text-accent-green">DevOps</span> à travers
+                  des vidéos tech. J&apos;ai tout de suite accroché à la
+                  logique d&apos;automatisation et de résolution de problèmes.
                 </p>
                 <p>
-                  J&apos;ai tout réorienté. Depuis,{" "}
+                  J&apos;ai réorienté ma carrière. Aujourd&apos;hui,{" "}
                   <span className="text-accent-green">
-                    je code tous les jours
+                    je construis des applications de A à Z
                   </span>
-                  , avec méthode et discipline.
+                  , en utilisant les outils modernes (comme l&apos;IA) pour
+                  accélérer mon apprentissage et livrer des projets réels.
                 </p>
               </div>
             </div>
@@ -90,14 +89,14 @@ export default function AboutPage() {
                 Ce que j&apos;apporte
               </h2>
               <p className="text-text-muted leading-relaxed">
-                Mon parcours précédent est un atout, pas un handicap :
+                Mon parcours précédent est un atout :
               </p>
               <ul className="space-y-3 text-text-muted">
                 <li className="flex items-start gap-3">
                   <span className="text-accent-green mt-1">▸</span>
                   <span>
                     <span className="text-text">Management d&apos;équipe</span>{" "}
-                    — 4 ans à coordonner, former, gérer le stress
+                    — 4 ans à coordonner, former et gérer le stress
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -117,8 +116,8 @@ export default function AboutPage() {
                 <li className="flex items-start gap-3">
                   <span className="text-accent-green mt-1">▸</span>
                   <span>
-                    <span className="text-text">Autodidacte rigoureux</span> —
-                    j&apos;apprends vite, seul, et je documente tout
+                    <span className="text-text">Autonomie</span> — capacité à
+                    apprendre, chercher et construire seul
                   </span>
                 </li>
               </ul>
@@ -130,10 +129,6 @@ export default function AboutPage() {
                 <Code2 size={22} className="text-accent-green" />
                 Ce que je construis
               </h2>
-              <p className="text-text-muted leading-relaxed">
-                Je ne me contente pas d&apos;apprendre. Je{" "}
-                <span className="text-text">construis</span> :
-              </p>
               <ul className="space-y-3 text-text-muted">
                 <li className="flex items-start gap-3">
                   <span className="text-accent-green mt-1">🎯</span>
@@ -157,23 +152,20 @@ export default function AboutPage() {
                     TypeScript + API GitHub automatique
                   </span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-accent-green mt-1">🔧</span>
-                  <span>
-                    <span className="text-text">
-                      Scripts d&apos;automatisation
-                    </span>{" "}
-                    — Bash et Python au quotidien
-                  </span>
-                </li>
               </ul>
-              <p className="text-text-muted leading-relaxed pt-2">
-                Chaque projet est versionné sur GitHub avec{" "}
-                <span className="text-accent-green">
-                  workflow Git professionnel
-                </span>{" "}
-                et <span className="text-accent-green">CI/CD</span>.
-              </p>
+              <div className="bg-accent-green/5 border border-accent-green/20 rounded-lg p-4 mt-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <TerminalIcon size={16} className="text-accent-green" />
+                  <span className="text-sm font-mono font-bold text-text">
+                    100% développé sur Termux
+                  </span>
+                </div>
+                <p className="text-xs text-text-muted leading-relaxed">
+                  Tous mes projets sont construits depuis un smartphone Android, 
+                  en ligne de commande. Un vrai défi technique et une preuve 
+                  d&apos;adaptation.
+                </p>
+              </div>
             </div>
 
             {/* 5. MA VISION */}
@@ -184,22 +176,15 @@ export default function AboutPage() {
               </h2>
               <div className="bg-bg-soft border-l-4 border-accent-green rounded-r-lg p-5">
                 <p className="text-text leading-relaxed mb-3">
-                  D&apos;ici 2 ans, je serai{" "}
+                  Mon objectif : devenir{" "}
                   <span className="text-accent-green font-semibold">
-                    ingénieur DevOps confirmé
-                  </span>
-                  .
-                </p>
-                <p className="text-text-muted leading-relaxed mb-3">
-                  Pas parce que j&apos;y crois — parce que je travaille pour.
+                    ingénieur DevOps
+                  </span>{" "}
+                  et maîtriser les infrastructures cloud.
                 </p>
                 <p className="text-text-muted leading-relaxed">
-                  Mon objectif : maîtriser{" "}
-                  <span className="text-text">
-                    Docker, Kubernetes, Terraform, AWS
-                  </span>{" "}
-                  et construire des infrastructures fiables, automatisées,
-                  sécurisées.
+                  Je construis mes bases pas à pas (Linux, Bash, Git). Prochaine étape :{" "}
+                  <span className="text-text">Docker, puis Kubernetes et Terraform</span>.
                 </p>
               </div>
             </div>
@@ -233,13 +218,23 @@ export default function AboutPage() {
 
           {/* SIDEBAR */}
           <aside className="space-y-6">
-            {/* Identité */}
+            {/* Identité + PHOTO CLIQUABLE */}
             <div className="bg-bg-soft border border-border rounded-lg p-6 space-y-4">
               <div className="flex justify-center">
                 <div className="w-32 h-32 rounded-full bg-gradient-accent p-0.5">
-                  <div className="w-full h-full rounded-full bg-bg-card flex items-center justify-center overflow-hidden">
-                    {/* ⚠️ Remplacer par : <img src="/photo.jpg" alt="Devy" className="w-full h-full object-cover" /> */}
-                    <User size={48} className="text-accent-green" />
+                  <div className="w-full h-full rounded-full bg-bg-card overflow-hidden cursor-pointer">
+                    <a 
+                      href="/photo.jpg" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block w-full h-full"
+                    >
+                      <img 
+                        src="/photo.jpg" 
+                        alt="Fotsing Ndigue Devy" 
+                        className="w-full h-full object-cover" 
+                      />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -248,7 +243,7 @@ export default function AboutPage() {
                   Fotsing Ndigue Devy
                 </p>
                 <p className="text-xs text-text-muted font-mono">
-                  DevOps Engineer (en formation)
+                  En transition DevOps
                 </p>
               </div>
               <div className="space-y-3 text-sm pt-2 border-t border-border">
@@ -315,23 +310,6 @@ export default function AboutPage() {
                   <span className="text-accent-green">Stack</span> ─ Next.js,
                   Tailwind
                 </p>
-              </div>
-            </div>
-
-            {/* Technologies */}
-            <div className="bg-bg-soft border border-border rounded-lg p-6 space-y-3">
-              <h3 className="font-mono text-sm text-accent-green mb-2">
-                $ ls technologies/
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="accent">Next.js</Badge>
-                <Badge variant="accent">TypeScript</Badge>
-                <Badge variant="accent">Tailwind</Badge>
-                <Badge>Linux</Badge>
-                <Badge>Bash</Badge>
-                <Badge>Python</Badge>
-                <Badge>Git</Badge>
-                <Badge>Vercel</Badge>
               </div>
             </div>
           </aside>
