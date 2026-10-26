@@ -1,11 +1,11 @@
 import PageHeader from "@/components/ui/PageHeader";
-import { skillsData, learningSkills } from "@/content/skills";
-import { Rocket } from "lucide-react";
+import { skillsData, learningSkills, softSkills } from "@/content/skills";
+import { Rocket, Users } from "lucide-react";
 
 export const metadata = {
   title: "Compétences | Fotsing Ndigue Devy",
   description:
-    "Mes compétences techniques, mes outils et mon environnement de travail.",
+    "Mes compétences techniques (Réseaux, Systèmes) et mes qualités humaines.",
 };
 
 export default function SkillsPage() {
@@ -14,11 +14,11 @@ export default function SkillsPage() {
       <PageHeader
         command="ls -la skills/"
         title="Compétences"
-        subtitle="Mon environnement de travail et mes outils"
+        subtitle="Mon environnement technique et mes qualités humaines"
       />
 
       <section className="container-custom py-12 md:py-16">
-        {/* CATÉGORIES PRINCIPALES */}
+        {/* CATÉGORIES PRINCIPALES (TECHNIQUES) */}
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {skillsData.map((category) => (
             <div
@@ -65,6 +65,30 @@ export default function SkillsPage() {
           ))}
         </div>
 
+        {/* SECTION SOFT SKILLS */}
+        <div className="mb-16 bg-bg-soft border border-border rounded-lg p-6 md:p-8">
+          <div className="flex items-center gap-3 mb-6">
+            <Users size={24} className="text-accent-green" />
+            <h2 className="text-2xl font-mono font-bold text-text">
+              Soft Skills
+            </h2>
+          </div>
+          <p className="text-text-muted mb-6 max-w-2xl">
+            Compétences humaines développées tout au long de mon parcours
+            (management, relation client, technique).
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {softSkills.map((skill) => (
+              <span
+                key={skill}
+                className="px-3 py-1.5 bg-bg-card border border-border text-text-muted font-mono text-sm rounded-full hover:border-accent-green/50 hover:text-accent-green transition-colors"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+
         {/* SECTION APPRENTISSAGE */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-6">
@@ -104,15 +128,6 @@ export default function SkillsPage() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* NOTE DE BAS DE PAGE */}
-        <div className="mt-12 bg-bg-soft border border-border rounded-lg p-6 text-center">
-          <p className="text-text-muted font-mono text-sm">
-            <span className="text-accent-green">#</span> Ces compétences sont mises à
-            jour au fur et à mesure de ma progression. L&apos;accent est mis sur
-            mon environnement (Termux) et ma capacité à orchestrer des outils modernes.
-          </p>
         </div>
       </section>
     </>

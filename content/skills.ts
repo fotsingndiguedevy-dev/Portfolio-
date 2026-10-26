@@ -13,8 +13,35 @@ export interface SkillCategory {
 
 export const skillsData: SkillCategory[] = [
   {
-    title: "Systèmes & Environnement",
-    command: "cat system.txt",
+    title: "Systèmes & Réseaux",
+    command: "cat network.txt",
+    icon: "🌐",
+    skills: [
+      {
+        name: "Systèmes (Windows Server, Linux)",
+        level: 70,
+        note: "Administration et gestion",
+      },
+      {
+        name: "Réseaux (TCP/IP, DHCP, DNS, VLAN)",
+        level: 75,
+        note: "Bases solides (BTS Électrotechnique)",
+      },
+      {
+        name: "Routage (OSPF, BGP, RIP V2)",
+        level: 60,
+        note: "Configuration et politiques",
+      },
+      {
+        name: "Virtualisation (Oracle, VirtualBox)",
+        level: 65,
+        note: "Création et gestion de VMs",
+      },
+    ],
+  },
+  {
+    title: "Environnement & Outils",
+    command: "cat tools.txt",
     icon: "🖥️",
     skills: [
       {
@@ -23,26 +50,31 @@ export const skillsData: SkillCategory[] = [
         note: "100% de mes projets construits ici",
       },
       {
-        name: "Linux / Bash",
+        name: "Vim / Bash Scripting",
         level: 70,
-        note: "Commandes, scripts, automatisation",
+        note: "Édition et automatisation",
       },
       {
-        name: "Vim",
-        level: 65,
-        note: "Édition de code en ligne de commande",
+        name: "Git & GitHub",
+        level: 80,
+        note: "Workflow Git Flow, PR",
+      },
+      {
+        name: "Vercel",
+        level: 75,
+        note: "Déploiement continu",
       },
     ],
   },
   {
-    title: "Architecture & Orchestration",
+    title: "Architecture & IA",
     command: "cat architecture.txt",
     icon: "🧠",
     skills: [
       {
         name: "Architecture logicielle",
         level: 65,
-        note: "Structure hiérarchique (Parties > Modules)",
+        note: "Structure hiérarchique et logique",
       },
       {
         name: "Outils IA (DeepSeek, Claude)",
@@ -52,34 +84,7 @@ export const skillsData: SkillCategory[] = [
       {
         name: "Gestion de projet",
         level: 75,
-        note: "Planification, exécution, documentation",
-      },
-    ],
-  },
-  {
-    title: "Outils & Déploiement",
-    command: "cat tools.txt",
-    icon: "🔧",
-    skills: [
-      {
-        name: "Git & GitHub",
-        level: 80,
-        note: "Workflow Git Flow, PR, Branches",
-      },
-      {
-        name: "Vercel",
-        level: 75,
-        note: "Déploiement continu (CI/CD basique)",
-      },
-      {
-        name: "GitHub Actions",
-        level: 45,
-        note: "Création de workflows de test/build",
-      },
-      {
-        name: "VPS / Nginx",
-        level: 20,
-        note: "Prochaine étape (migration)",
+        note: "Planification et exécution",
       },
     ],
   },
@@ -107,4 +112,23 @@ export const learningSkills = [
     level: 5,
     note: "Focus Cloud prévu",
   },
+  {
+    name: "VPS (Nginx, PM2)",
+    level: 10,
+    note: "Migration prévue",
+  },
+];
+
+// Section Soft Skills
+export const softSkills = [
+  "Esprit d'équipe",
+  "Leadership",
+  "Rigueur",
+  "Curiosité",
+  "Autonomie",
+  "Adaptabilité",
+  "Communication",
+  "Sens de l'analyse",
+  "Orienté résultat",
+  "Service client",
 ];
